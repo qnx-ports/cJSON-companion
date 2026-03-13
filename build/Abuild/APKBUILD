@@ -3,7 +3,7 @@
 # Maintainer: jscaffidi <jscaffidi@qnx.com>
 pkgname=cjson
 pkgver=1.7.19
-pkgrel=1
+pkgrel=${pkgrel:-0}
 pkgdesc="Lighweight JSON parser in C"
 url="https://github.com/DaveGamble/cJSON"
 arch="all"
@@ -36,6 +36,7 @@ package() {
 }
 
 
+options="$options ${DISABLE_CHECK:+!check}"
 sha512sums="
 7b22bdd05b8e0bf8b24ab79db128dbab9f8c2c167f4b1d3073922b8ff1e0f0e8917322283d6d4091002f014f42692984f4f641761f05965d3b66fb3eca14dc46  cjson-1.7.19.tar.gz
 3775d24a9fddac4f434b4647b252b270992e4765454f17ceea4444c57f3dcf6b81ebcbe4f6435b8d2a81ab7483da7263df8bffcb96cac47cc6a4ee9b1f28c7fd  00-c99.patch
